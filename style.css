@@ -1,0 +1,79 @@
+* {
+    font-family: Comfortaa, Noto Color Emoji, Arial, Helvetica, sans-serif
+}
+
+body {
+    background-color: #11111b;
+    color: #cdd6f4;   
+}
+
+#cRect {
+    width: 200px;
+    min-height: 200px;
+    border-radius: 16px;
+    background-color: transparent;
+    transform: scale(1);
+    transition: background-color 0.1s ease-out;
+}
+
+.cRect {
+    width: 200px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    background-color: rgba(24, 24, 37, 128);
+    border-radius: 16px;
+    border: #313244 2px solid;
+    padding: 25px 25px 10px 25px;
+}
+
+#cText{
+    display: flex;
+    margin: 5px auto;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    min-height: 24px;
+    width: 100px;
+    border-radius: 8px;
+    border: #313244 2px solid;
+    background-color: #11111b;
+    font-weight: 700;
+}
+
+@property --hue {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.generate {
+    margin: 8px auto;
+    display: block;
+    background-color: #11111b;
+    color: #cdd6f4;
+    border-radius: 8px;
+    border: hsl(var(--hue), 80%, 75%) 2px solid;
+    box-shadow: 0 0 0 hsl(var(--hue), 80%, 75%);
+    transition: box-shadow 0.25s, background-color 0.1s;
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    padding: 4px 16px;
+    animation: hueRotate 2s linear infinite;
+}
+
+.generate:hover {
+    box-shadow: 0 0 12px hsl(var(--hue), 80%, 75%);
+    background-color: #313244;
+}
+
+.generate:active {
+    background-color: #6c7086;
+}
+
+@keyframes hueRotate {
+  to {
+    --hue: 360deg;
+  }
+}
